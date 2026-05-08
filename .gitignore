@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.vercel/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Uploaded files (if storing locally)
+/uploads/
+/temp/
+
+# Backup files
+*.bak
+*.backup
+
+# Secrets (never commit!)
+*.pem
+*.key
+*.crt
+
+# Railway / Render
+.railway/
+.render/
+
+# Vercel
+.vercel
+
+# Coverage (if testing)
+coverage/
+.nyc_output/
+
+# Debug
+debug.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock

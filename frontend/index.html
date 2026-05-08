@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JonArt Galleries | Portrait & Realism Art</title>
+    <meta name="description" content="JonArt Galleries - commission original portrait and realism artwork. Experience bold, dramatic gallery-quality art from master artist Jon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="preload" href="/public/js/main.js" as="script">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div class="loading-screen">
+    <div class="loading-logo">JONART</div>
+    <div class="loading-bar">
+        <div class="loading-progress"></div>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">JONART</a>
+        <button class="mobile-menu-btn">☰</button>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#artist">ARTIST</a></li>
+            <li><a href="#commission">COMMISSION</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#studio-visit">STUDIO</a></li>
+            <li><a href="#gift-cards">GIFTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>JONART <span>GALLERIES</span></h1>
+        <div class="hero-tagline">PORTRAIT & REALISM</div>
+        <a href="#gallery" class="hero-cta">DISCOVER THE ART</a>
+    </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="reveal">
+    <h2 class="section-title">THE GALLERY</h2>
+    <div id="gallery-grid" class="gallery-grid">
+        <!-- Artworks load dynamically from Supabase -->
+    </div>
+</section>
+
+<!-- ARTIST SECTION -->
+<section id="artist" class="artist-section reveal">
+    <div class="artist-container">
+        <div>
+            <img src="/public/images/placeholder-artist.jpg" alt="Jon - Master Artist" class="artist-image">
+        </div>
+        <div class="artist-bio">
+            <h3>SSEBYIGGA JOHN VIANNEY</h3>
+            <p>Master of contemporary realism with over 20 years of dedicated practice in portrait artistry. Trained my-self the skill and influenced by the dramatic chiaroscuro of Caravaggio and the psychological depth of Lucian Freud.</p>
+            <p>My  work hangs in private collections across Uganda and EastAfrica. My distinctive approach combines classical techniques with modern sensibilities, creating portraits that capture not just likeness, but essence.</p>
+            <p><strong>Exhibitions:</strong>  The Native Culture,Uganda Muesuem (2022)</p>
+        </div>
+    </div>
+</section>
+
+<!-- COMMISSION SECTION -->
+<section id="commission" class="reveal">
+    <h2 class="section-title">COMMISSION A WORK</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <form onsubmit="submitCommission(event)">
+            <div class="form-group">
+                <label>FULL NAME *</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>EMAIL *</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>PHONE</label>
+                <input type="tel" name="phone">
+            </div>
+            <div class="form-group">
+                <label>PREFERRED ART STYLE *</label>
+                <select name="artStyle" required>
+                    <option value="">Select...</option>
+                    <option>Classical Portrait</option>
+                    <option>Contemporary Realism</option>
+                    <option>Dramatic Chiaroscuro</option>
+                    <option>Minimalist Portrait</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>DESCRIPTION OF COMMISSION *</label>
+                <textarea name="description" rows="5" placeholder="Describe what you'd like to commission... (subject, mood, size, etc.)" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>BUDGET RANGE</label>
+                <select name="budget">
+                    <option>$15 - $50</option>
+                    <option>$50 - $100</option>
+                    <option>$100 - $200</option>
+                    <option>$200 - $500</option>
+                    <option>$500 - $1,000</option>
+                    <option>$1,000 - $2,000</option>
+                    <option>$2,000+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>TIMELINE</label>
+                <select name="timeline">
+                    <option>Within 1 month</option>
+                    <option>1-3 months</option>
+                    <option>3-6 months</option>
+                    <option>Flexible</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>REFERENCE IMAGE (optional)</label>
+                <input type="file" name="referenceImage" accept="image/*">
+            </div>
+            <button type="submit" class="btn-primary">SUBMIT COMMISSION REQUEST</button>
+        </form>
+    </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section id="blog" class="reveal">
+    <h2 class="section-title">STUDIO JOURNAL</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <h4>The Art of the Portrait Commission</h4>
+            <div class="blog-date">April 15, 2026</div>
+            <p>A guide to commissioning a portrait that will become a family heirloom...</p>
+        </div>
+        <div class="blog-card">
+            <h4>Behind the Canvas: Studio Practice</h4>
+            <div class="blog-date">March 28, 2026</div>
+            <p>Exploring the materials and methods behind contemporary realism...</p>
+        </div>
+        <div class="blog-card">
+            <h4>Collecting Realism: A Buyer's Guide</h4>
+            <div class="blog-date">March 10, 2026</div>
+            <p>What to look for when investing in contemporary realist art...</p>
+        </div>
+    </div>
+</section>
+
+<!-- STUDIO VISIT SECTION -->
+<section id="studio-visit" class="reveal">
+    <h2 class="section-title">VISIT THE STUDIO</h2>
+    <div style="max-width: 600px; margin: 0 auto;">
+        <form onsubmit="submitStudioBooking(event)">
+            <div class="form-group">
+                <label>NAME *</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>EMAIL *</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>PHONE</label>
+                <input type="tel" name="phone">
+            </div>
+            <div class="form-group">
+                <label>PREFERRED DATE</label>
+                <input type="date" name="preferredDate">
+            </div>
+            <div class="form-group">
+                <label>PREFERRED TIME</label>
+                <input type="time" name="preferredTime">
+            </div>
+            <div class="form-group">
+                <label>VISIT PURPOSE</label>
+                <textarea name="visitPurpose" rows="4" placeholder="Tell us why you're visiting..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">REQUEST STUDIO VISIT</button>
+        </form>
+    </div>
+</section>
+
+<!-- GIFT CARDS SECTION -->
+<section id="gift-cards" class="reveal">
+    <h2 class="section-title">GIFT CARDS</h2>
+    <div class="gift-card-container">
+        <div class="gift-card-currency">
+            <button type="button" class="currency-btn selected" data-currency="USD" onclick="selectGiftCardCurrency('USD')">USD</button>
+            <button type="button" class="currency-btn" data-currency="UGX" onclick="selectGiftCardCurrency('UGX')">UGX</button>
+        </div>
+        <div class="gift-card-options">
+            <button type="button" class="gift-card-btn" data-value="50" onclick="selectGiftCardAmount(50)">Buy $50</button>
+            <button type="button" class="gift-card-btn" data-value="100" onclick="selectGiftCardAmount(100)">Buy $100</button>
+            <button type="button" class="gift-card-btn" data-value="250" onclick="selectGiftCardAmount(250)">Buy $250</button>
+            <button type="button" class="gift-card-btn" data-value="custom" onclick="selectGiftCardAmount('custom')">Custom Amount</button>
+        </div>
+        <div id="custom-amount" class="custom-amount" style="display:none;">
+            <input id="custom-amount-value" type="number" min="1" placeholder="Enter amount in USD">
+        </div>
+        <button type="button" class="btn-primary gift-card-purchase-btn" onclick="purchaseGiftCard()">Purchase Gift Card</button>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="reveal">
+    <h2 class="section-title">CONTACT</h2>
+    <div style="max-width: 700px; margin: 0 auto;">
+        <form onsubmit="submitContact(event)">
+            <div class="form-group">
+                <label>NAME *</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>EMAIL *</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>SUBJECT</label>
+                <input type="text" name="subject">
+            </div>
+            <div class="form-group">
+                <label>MESSAGE *</label>
+                <textarea name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">SEND MESSAGE</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2026 JonArt Galleries. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="/public/js/main.js" defer></script>
+</body>
+</html>
